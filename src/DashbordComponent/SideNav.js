@@ -4,7 +4,7 @@ import style from  "./styles/SideNav.module.scss";
 import Link from 'next/link';
 
 
-const SideNav = () => {
+const SideNav = (props) => {
   const Icon = (iconName = "")=> `/assets/icons/${iconName}.svg`
   const navConfig = [
 {
@@ -31,7 +31,7 @@ const SideNav = () => {
       {
       navConfig.map((e)=>{
         return(
-      <Link key={e.route} href={e.route} className={style.linktag} >
+      <Link key={e.route} href={e.route} className={style.linktag} onClick={()=>{props.changeRoute()}}>
       <div className={`${style.route} ${style.activeRoute}`} >
         <img src={e.img} alt="img" />
         <p>{e.name}</p>

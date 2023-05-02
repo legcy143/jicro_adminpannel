@@ -15,7 +15,7 @@ const layout = ({ children }) => {
   const Icon = (iconName = "")=> `/assets/images/avatars/${iconName}.jpg`
   
   return (
-    <div>
+    <div className={style.main_layout_div}>
       <nav className={style.navTop}>
         <div className={style.menu_logo}>
           <MenuIcon onClick={() => menuHandle()}/>
@@ -48,7 +48,7 @@ const layout = ({ children }) => {
       <main className={style.mainContainer}>
 
         <section className={`${style.sideNav} ${togglenav}`}>
-          <SideNav /> 
+          <SideNav changeRoute={()=>menuHandle()}/> 
           </section>
 
         <section className={style.childLayout} >
