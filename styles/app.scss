@@ -1,0 +1,7 @@
+@import "./mixins";
+
+.primarylayout{
+    position: relative;
+    margin: auto;
+    width: $pageView;
+}

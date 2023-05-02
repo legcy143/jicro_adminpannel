@@ -1,0 +1,11 @@
+@mixin fontSize($min:1.5rem , $max:3rem , $change:1rem){
+    font-size: clamp($min , calc($change + 1vw) , $max);
+}
+@mixin dynamicHeight($vh:100, $dvh:100){
+    height: $vh;
+    height: $dvh;
+}
+@mixin minHeight($vh:100vh, $dvh:100dvh){
+    min-height: $vh;
+    min-height: $dvh;
+}

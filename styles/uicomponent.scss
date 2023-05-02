@@ -1,0 +1,48 @@
+
+@mixin commonInput(){
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    font-family: inherit;
+    width: 100%;
+    transition: 0.30s ease;
+    background-color: var(--theme-container);
+    background-color: rgba(0, 0, 0, 0.02);
+    border: 0.1rem solid rgba(var(--primary-color-rgb) , 0.6);
+    &::placeholder{
+        transition: 0.30s ease;
+        opacity: 0.6;
+    }
+    &:focus{
+        transition: 0.30s ease;
+        &::placeholder{
+            padding-left: 0.3rem;
+            opacity: 0.4;
+        }
+    }
+}
+
+@mixin primaryInput(){
+    @include commonInput();
+}
+@mixin primaryTextarea(){
+    @include commonInput();
+    resize: none;
+}
+@mixin primaryButton(){
+    padding: 0.7rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    border-radius: 0.2rem;
+    background-color: rgba(var(--primary-color-rgb) , 0.8);
+    color: rgba(255, 255, 255, 0.849);
+    text-transform: capitalize;
+    @include flexBox();
+    &:hover{
+        background-color: rgba(var(--primary-color-rgb) , 1);
+    }
+}
